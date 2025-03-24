@@ -9,9 +9,6 @@ const providerApiKey = process.env.ALCHEMY_API_KEY || "";
 const deployerPrivateKey = process.env.PRIVATE_KEY_DEPLOYER || "";
 
 async function main() {
-  const proposals = process.argv.slice(2);
-  if (!proposals || proposals.length < 1)
-    throw new Error("Proposals not provided");
   const publicClient = createPublicClient({
     chain: sepolia,
     transport: http(`https://eth-sepolia.g.alchemy.com/v2/${providerApiKey}`),
